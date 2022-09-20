@@ -3,7 +3,7 @@
   num변수의 값이 10의 배수이면 1을 아니면 0을 
    리턴하는 프로그램을 구현하시오.
   [실행결과]
-   10
+   1
  */
 
 let num = -10;
@@ -25,16 +25,12 @@ console.log(`==========================================`);
    3  [실행결과]
        필요한 바구니의 수 : 13
     */
-let i,
-  sum = 0;
-for (i = 10; ; i += 10) {
-  if (i > 130) {
-    break;
-  }
-  sum++;
-}
+let apple = 128,
+  basket = 10,
+  numofbasket;
+numofbasket = parseInt(apple / basket) + (apple % basket > 0 ? 1 : 0);
 console.log(`[실행결과]
-필요한 바구니의 수 : ${sum}`);
+필요한 바구니의 수 : ${numofbasket}`);
 
 console.log(`==========================================`);
 
@@ -104,11 +100,10 @@ console.log(`==========================================`);
      2008
      2012
     */
-// year%4 == 0  || year%100 != 0
+// year%4 == 0  && year%100 != 0
 // year%400 == 0
 
-let year;
-for (year = 2001; year <= 2012; year++) {
+for (let year = 2001; year <= 2012; year++) {
   if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
     console.log(`${year}`);
   }
@@ -125,13 +120,12 @@ console.log(`==========================================`);
     *  x=5, y=0
     */
 
-let x, y;
-for (x = 0; x <= 10; x++) {
-  for (y = 0; y <= 10; y++) {
-    if (10 != 2 * x + 3 * y) {
-      continue;
-    } else {
+for (let x = 0; x <= 10; x++) {
+  for (let y = 0; y <= 10; y++) {
+    if (10 == 2 * x + 3 * y) {
       console.log(`x=${x}, y=${y}`);
+    } else {
+      continue;
     }
   }
 }

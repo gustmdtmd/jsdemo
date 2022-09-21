@@ -19,6 +19,13 @@ while (j <= 5) {
 }
 
 /*
+while문은 조건식 생략이 불가능하다.
+while(){
+  console.log(`test`)
+}
+*/
+
+/*
 do~while문 꼭한번은 실행함.
 do{
     실행문;

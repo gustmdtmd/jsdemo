@@ -6,14 +6,22 @@
    1
  */
 
-let num = -10;
-if (num % 10 == 0) {
-  console.log(`[실행결과]
-  1`);
-} else {
-  console.log(`[실행결과]
-  0`);
-}
+//if문보다 조건연산자를 이용하는게 더 간결하다.
+// let num = 10;
+// if문 이용
+// if (num % 10 == 0) {
+//   console.log(`[실행결과]
+//   1`);
+// } else {
+//   console.log(`[실행결과]
+//   0`);
+// }
+
+//조건연산자 이용
+console.log(`[출력결과]`);
+let num = 10;
+let bit = num % 10 == 0 ? 1 : 0;
+console.log(bit);
 
 console.log(`==========================================`);
 /*
@@ -25,12 +33,17 @@ console.log(`==========================================`);
    3  [실행결과]
        필요한 바구니의 수 : 13
     */
-let apple = 128,
-  basket = 10,
-  numofbasket;
-numofbasket = parseInt(apple / basket) + (apple % basket > 0 ? 1 : 0);
-console.log(`[실행결과]
-필요한 바구니의 수 : ${numofbasket}`);
+let apple = 128, //사과의 수
+  basket = 10, //하나의 바구니에 담는 사과수
+  numOfBasket; //필요한 바구니 수
+numOfBasket = parseInt(apple / basket) + (apple % basket > 0 ? 1 : 0);
+//numOfBasket =
+//    apple % basket == 0
+//    ? parseInt(apple / basket)
+//    : parseInt(apple / basket)+1
+
+console.log(`[출력결과]`);
+console.log(`필요한 바구니의 수 : ${numOfBasket}`);
 
 console.log(`==========================================`);
 
@@ -50,41 +63,33 @@ console.log(`==========================================`);
             차량번호의 끝자리가 5인 차량은 금요일 운행을 제한합니다.
      
     */
-let n = 5;
+let carNumber = 5;
 let day = "";
-switch (n % 10) {
+switch (carNumber % 10) {
   case 1:
-    day = `월`;
+  case 6:
+    day = `월요일`;
     break;
   case 2:
-    day = `화`;
+  case 7:
+    day = `화요일`;
     break;
   case 3:
-    day = `수`;
+  case 8:
+    day = `수요일`;
     break;
   case 4:
-    day = `목`;
+  case 9:
+    day = `목요일`;
     break;
   case 5:
-    day = `금`;
-    break;
-  case 6:
-    day = `월`;
-    break;
-  case 7:
-    day = `화`;
-    break;
-  case 8:
-    day = `수`;
-    break;
-  case 9:
-    day = `목`;
-    break;
   case 0:
-    day = `금`;
-    break;
+    day = `금요일`;
 }
-console.log(`차량번호의 끝자리가 ${n}인 차량은 ${day} 운행을 제한합니다.`);
+console.log(`[출력결과]`);
+console.log(
+  `차량번호의 끝자리가 ${carNumber}인 차량은 ${day} 운행을 제한합니다.`
+);
 
 console.log(`==========================================`);
 
@@ -103,11 +108,20 @@ console.log(`==========================================`);
 // year%4 == 0  && year%100 != 0
 // year%400 == 0
 
+console.log(`[출력결과]`);
+//let year = 2012;
 for (let year = 2001; year <= 2012; year++) {
-  if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+  let leapYearCheck = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+  // let yearDate = leapYearCheck ? `윤년` : `평년`;
+  if (leapYearCheck) {
     console.log(`${year}`);
   }
 }
+// for (let year = 2001; year <= 2012; year++) {
+//   if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+//     console.log(`${year}`);
+//   }
+// }
 console.log(`==========================================`);
 
 /*  
@@ -120,12 +134,11 @@ console.log(`==========================================`);
     *  x=5, y=0
     */
 
+console.log(`[출력결과]`);
 for (let x = 0; x <= 10; x++) {
   for (let y = 0; y <= 10; y++) {
     if (10 == 2 * x + 3 * y) {
       console.log(`x=${x}, y=${y}`);
-    } else {
-      continue;
     }
   }
 }

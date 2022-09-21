@@ -18,9 +18,9 @@ for (let element of subject) {
 console.log(`======================================`);
 let obj = { a: 1, b: 2, c: 3 };
 
-for (let value of obj) {
-  console.log(value); //TypeError: obj is not iterable
-}
+//for (let value of obj) {
+//  console.log(value); //TypeError: obj is not iterable
+//}
 
 /*
    for ~ of문은 반복 가능한 객체(Array, String, Map, Set, arguments)를 반복하는 객체

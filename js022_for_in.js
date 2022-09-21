@@ -26,8 +26,8 @@ for (let index = 0; index < color.length; index++) {
 //javascript : index를 가져옴.
 let city = [`서울`, `부산`, `대전`];
 for (let idx in city) {
-  console.log(idx);
-  console.log(city[idx]);
+  console.log(idx); //0,1,2
+  console.log(city[idx]); //서울,부산,대전
 }
 
 let obj = { a: 1, b: 2, c: 3 };

@@ -6,40 +6,45 @@
   주어진 배열에서 3의 배수의 개수=> 6
   주어진 배열에서 3의 배수의 합=> 108
   */
+//  let a=[];
+//  a[0]=10;
+//  a[1]=20;
+//  a[3]=30;
+
 let arr = [1, 3, 5, 8, 9, 11, 15, 19, 18, 20, 30, 33, 31];
-console.log(`[프로그램 실행결과]`);
-console.log(`3의배수=> ${process(arr)}`);
-console.log(`주어진 배열에서 3의 배수의 개수=> ${count(arr)}`);
-console.log(`주어진 배열에서 3의 배수의 합=> ${arrPlus(arr)}`);
 
 //주어진 arr배열에서 3의 배수를 구해서 리턴하는 함수 정의
 
-function process(arr) {
-  let process = ``;
+function process1(arr) {
+  let data = [];
+  // console.log(process.length);{
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 3 == 0) process += arr[i] + ` `;
+    if (arr[i] % 3 == 0) {
+      data[data.length] = arr[i];
+    }
   }
-  return process;
+  return data;
 }
+
 //주어진 arr배열에서 3의 배수의 갯수를 리턴하는  함수 정의
 function count(process) {
-  let count = 0;
-  for (let i = 0; i < process.length; i++) {
-    if (process[i] % 3 == 0) count++;
-  }
-  return count;
+  return process.length;
 }
 
 //주어진 arr배열에서 3의 배수 합을 리턴하는 함수 정의
 function arrPlus(process) {
-  let arrPlus = 0;
+  let sum = 0;
   for (let i = 0; i < process.length; i++) {
-    if (process[i] % 3 == 0) {
-      arrPlus += process[i];
-    }
+    sum += process[i];
   }
-  return arrPlus;
+  return sum;
 }
+
+//console.log(process(arr));
+
+let result = process1(arr);
+console.log(count(process1(result)));
+console.log(arrPlus(process1(result)));
 
 /*
   [문제2]
@@ -50,24 +55,22 @@ function arrPlus(process) {
   */
 
 let alpa = ["j", "a", "v", "a", "s", "c", "r", "i", "p", "t"];
-console.log(`[출력결과]`);
-console.log(`${reverse(alpa)}`);
-console.log(`${display(alpa)}`);
 
 //alpa배열의 요소를 reverse한 후 리턴하는 함수 정의
 function reverse(alpa) {
-  let reverse = ``;
+  let data = [];
   for (let i = alpa.length - 1; i >= 0; i--) {
-    reverse += alpa[i];
+    data[data.length] = alpa[i];
   }
-  return reverse;
+  return data;
 }
 
 //data배열의 출력하는 함수 정의
 function display(data) {
-  let display = ``;
-  for (let i = 0; i < data.length; i++) {
-    display += data[i];
-  }
-  return display;
+  for (let i = 0; i < data.length; i++) process.stdout.write(data[i]);
+  process.stdout.write(`\n`);
 }
+
+display(alpa);
+display(reverse(alpa));
+display(alpa);

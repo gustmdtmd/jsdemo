@@ -34,6 +34,8 @@ let person1 = { name: "홍길동", phone: "010-1234-5678" };
 let person2 = { name: "진여구", phone: "010-253-2253" };
 
 //출력결과를 참고하여 display()함수를 구현하세요
-function display(customer) {}
+function display(customer) {
+  console.log(`이름: ${person1.name}\n연락처: ${person1.phone}`);
+}
 display(person1);
 display(person2);

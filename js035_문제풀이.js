@@ -45,25 +45,28 @@ let jumsu = [
   ["홍길동", 90, 85, 40],
   ["이영희", 100, 35, 75],
 ];
-let jum;
-let su = [];
-for (let i = 0; i < jumsu.length; i++) {
-  jum = jumsu[i].filter(function (element, index) {
-    return element >= 0;
-  });
-  for (let i = 0; i < jum.length; i++) {
-    if (jum[i] != 0) {
-      su[su.length] = jum[i];
-    }
-  }
-  return su;
-}
-console.log(su);
 
+let hap = [];
+for (let i = 0; i < jumsu.length; i++) {
+  jumsu[i].shift();
+  hap[hap.length] = jumsu[i];
+}
+
+console.log(hap);
 function getSum(total, num) {
+  //total : 누적, num : 요소
   return total + num;
 }
+let summ = hap[0].reduce(getSum);
+console.log(summ);
+console.log(summ / hap[0].length);
 
-let sum1 = jum.reduce(getSum);
-console.log(`합계 : ${sum1}`);
-console.log(`평균 : ${sum1 / jumsu.length} `);
+function getSum(total, num) {
+  //total : 누적, num : 요소
+  return total + num;
+}
+let summ1 = hap[1].reduce(getSum);
+console.log(summ1);
+console.log(summ1 / hap[1].length);
+
+console.log(hap[0].push(summ));

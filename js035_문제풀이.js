@@ -51,9 +51,14 @@ for (let i = 0; i < jumsu.length; i++) {
   jum = jumsu[i].filter(function (element, index) {
     return element >= 0;
   });
-  //   console.log(jum);
-  su = jum;
+  for (let i = 0; i < jum.length; i++) {
+    if (jum[i] != 0) {
+      su[su.length] = jum[i];
+    }
+  }
+  return su;
 }
+console.log(su);
 
 function getSum(total, num) {
   return total + num;

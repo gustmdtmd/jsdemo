@@ -70,7 +70,7 @@ console.log(`charAt(): ${data.charAt(0)}`);
 console.log(`charAt(): ${data.charCodeAt(0)}`);
 
 data = `a,b,c,d,e`;
-//split() : 문자열을 나누워 준다.
+//split() : 문자열을 나누어 준다.
 let arr = data.split(`,`);
 for (let i of arr) console.log(i);
 

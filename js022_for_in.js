@@ -38,8 +38,8 @@ console.log(obj.b); //2
 console.log(obj.c); //3
 
 for (let prop in obj) {
-  //console.log(prop);
-  //console.log(obj[prop]);
+  // console.log(prop); a
+  // console.log(obj[prop]); 오류
   console.log(`${prop}:${obj[prop]}`); //a:1
   //console.log(`${prop}:${obj.prop}`);//a:undefined
 }

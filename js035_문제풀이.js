@@ -14,7 +14,7 @@ let arr = [1, 2, 3, undefined, 4, undefined, undefined, 5];
 */
 let arr = [1, 2, 3, undefined, 4, undefined, undefined, 5];
 let ary = arr.filter(function (element, index) {
-  return element <= 5;
+  return element != undefined;
 });
 
 // console.log(`ary : ${ary}`);

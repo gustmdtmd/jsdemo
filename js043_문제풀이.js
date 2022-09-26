@@ -9,7 +9,7 @@ let hours = today.getHours();
 let minutes = today.getMinutes();
 let seconds = today.getSeconds();
 
-pNode = `${year}-${month + 1}-${date}  ${hours}:${minutes}:${seconds}`;
+let pNode = `${year}-${month + 1}-${date}  ${hours}:${minutes}:${seconds}`;
 
 function process() {
   document.getElementById(`now`).innerHTML = pNode;

@@ -13,19 +13,23 @@ let arr = [1, 2, 3, undefined, 4, undefined, undefined, 5];
 
 */
 let arr = [1, 2, 3, undefined, 4, undefined, undefined, 5];
-let ary = arr.filter(function (element, index) {
-  return element <= 5;
+let result = arr.filter(function (element) {
+  return element != undefined;
 });
 
 // console.log(`ary : ${ary}`);
 
-function getSum(total, num) {
-  return total + num;
-}
+// function getSum(total, element) {
+//   return total + element;
+// }
+// let sum = ary.reduce(getSum);
 
-let sum = ary.reduce(getSum);
+//위의 두개의 식을 하나로 합친 식
+let sum = result.reduce(function (total, element) {
+  return total + element;
+});
 console.log(`합계 : ${sum}`);
-console.log(`평균 : ${sum / ary.length} `);
+console.log(`평균 : ${sum / result.length} `);
 
 /*
  [문제2] 
@@ -41,32 +45,33 @@ console.log(`평균 : ${sum / ary.length} `);
   최고점: 71.67
 */
 
-let jumsu = [
+let exam = [
   ["홍길동", 90, 85, 40],
   ["이영희", 100, 35, 75],
 ];
 
-let hap = [];
-for (let i = 0; i < jumsu.length; i++) {
-  jumsu[i].shift();
-  hap[hap.length] = jumsu[i];
+for (let i = 0; i < exam.length; i++) {
+  let fullName, jumsu;
+  [fullName, ...jumsu] = exam[i];
+  //배열 Destructuring
+  //[fullName, ...jumsu] = ["홍길동", 90, 85, 40] (exam[1])
+  //[fullName, ...jumsu] = ["이영희", 100, 35, 75] (exam[2])
+  let hap = jumsu.reduce(function (total, element) {
+    return total + element;
+  });
+  exam[i].push(hap);
+  exam[i].push((hap / jumsu.length).toFixed(2));
 }
+//toFixed() 메서드는 숫자를 고정 소수점 표기법으로 표시.
 
-console.log(hap);
-function getSum(total, num) {
-  //total : 누적, num : 요소
-  return total + num;
-}
-let summ = hap[0].reduce(getSum);
-console.log(summ);
-console.log(summ / hap[0].length);
+console.log(exam);
 
-function getSum(total, num) {
-  //total : 누적, num : 요소
-  return total + num;
-}
-let summ1 = hap[1].reduce(getSum);
-console.log(summ1);
-console.log(summ1 / hap[1].length);
+let lastEle = exam.map((element) => {
+  //map = 한번씩 다돈다
+  //element = [ '홍길동', 90, 85, 40, 215, '71.67']
+  return element[element.length - 1];
+  //한번 돌고 element = [ '이영희', 100, 35, 75, 210, '70.00' ]
+});
 
-console.log(hap[0].push(summ));
+console.log(lastEle);
+console.log(`최고점: ${Math.max(...lastEle)}`);

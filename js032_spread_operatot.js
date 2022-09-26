@@ -51,7 +51,7 @@ console.log(arr12); //[ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9, <1 empty item>, 15 
 ////////////////////////////////////////////////////////////////////////////////////
 //[2] 함수에서의 Spread Operator
 
-//1. Rest Parameter(나머지 매개변수)
+//1. Rest Parameter(나머지 매개변수 = 마지막의 매개변수)
 function display(...params) {
   return params.reduce((sum, a) => {
     return sum + a;
@@ -80,6 +80,8 @@ console.log(currentState); //{ name: `고수`, age: 30 }
 
 currentState = { ...prevState, loc: `서울` };
 console.log(currentState); //{ name: '고수', age: 30, loc: '서울' }
+
+//currentState = { name: "홍길동" }; 이름이 업데이트 되는게아니라 변수값이 name: "홍길동"로 바뀜.
 
 //2. 객체 업데이트
 let prevState2 = { name: "고수", age: 30 };

@@ -13,23 +13,19 @@ let arr = [1, 2, 3, undefined, 4, undefined, undefined, 5];
 
 */
 let arr = [1, 2, 3, undefined, 4, undefined, undefined, 5];
-let result = arr.filter(function (element) {
-  return element != undefined;
+let ary = arr.filter(function (element, index) {
+  return element <= 5;
 });
 
 // console.log(`ary : ${ary}`);
 
-// function getSum(total, element) {
-//   return total + element;
-// }
-// let sum = ary.reduce(getSum);
+function getSum(total, num) {
+  return total + num;
+}
 
-//위의 두개의 식을 하나로 합친 식
-let sum = result.reduce(function (total, element) {
-  return total + element;
-});
+let sum = ary.reduce(getSum);
 console.log(`합계 : ${sum}`);
-console.log(`평균 : ${sum / result.length} `);
+console.log(`평균 : ${sum / ary.length} `);
 
 /*
  [문제2] 
@@ -51,18 +47,14 @@ let exam = [
 ];
 
 for (let i = 0; i < exam.length; i++) {
-  let fullName, jumsu;
-  [fullName, ...jumsu] = exam[i];
-  //배열 Destructuring
-  //[fullName, ...jumsu] = ["홍길동", 90, 85, 40] (exam[1])
-  //[fullName, ...jumsu] = ["이영희", 100, 35, 75] (exam[2])
+  let FullName, jumsu;
+  [FullName, ...jumsu] = exam[i];
   let hap = jumsu.reduce(function (total, element) {
     return total + element;
   });
   exam[i].push(hap);
   exam[i].push((hap / jumsu.length).toFixed(2));
 }
-//toFixed() 메서드는 숫자를 고정 소수점 표기법으로 표시.
 
 console.log(exam);
 

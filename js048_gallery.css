@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+}
+
+/* 사진 옆 동그라미 제거*/
+li {
+  list-style-type: none;
+}
+
+/* 사진 밑 줄 제거*/
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/*gallery틀*/
+#gallery {
+  width: 350px;
+  margin: 30px auto;
+  border: 1px solid #999;
+}
+
+/*제목 위치 변경*/
+#gallery h1 {
+  text-align: center;
+}
+
+/*img 요소 border 변경*/
+#gallery img {
+  border: 1px solid #666;
+}
+
+/*#gallery #photo 위치 변경*/
+#gallery #photo {
+  text-align: center;
+}
+
+/*#gallery ul 높이 폭 사이즈 설정*/
+#gallery ul {
+  width: 800px;
+  margin: 0 auto;
+  /* background-color: aqua; */
+  /* height: 120px; */
+}
+
+/*#gallery ul li 위치 변경 폭 설정 */
+#gallery ul li {
+  width: 100px;
+  float: left;
+  text-align: center;
+}
+
+/* div#photo_list  위치 설정*/
+#gallery div#photo_list {
+  width: 300px;
+  margin: 10px auto;
+  /* border: 1px solid red; */
+  /* overflow: hidden; */
+}
+
+#gallery .btn_wrap {
+  clear: both;
+  text-align: center;
+}
+
+#gallery .btn_wrap a {
+  font-weight: border;
+  font-size: 25px;
+}

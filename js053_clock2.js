@@ -33,4 +33,5 @@ let watchTime = () => {
 
 watchTime();
 
+//1000이 1초
 let clockInterval = setInterval(watchTime, 1000);
